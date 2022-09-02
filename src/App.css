@@ -1,0 +1,33 @@
+:root {
+  --bg: #e8eaf6;
+  --title: #263238;
+  --text: #212121;
+  --red: #f50057;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--bg);
+}
+.container {
+  /* padding: 0 10rem;
+  border: 1px solid red; */
+}
+.delete-icon {
+  color: var(--red);
+}
+.search_section {
+  width: 40rem;
+  margin: 0 auto;
+}
+input {
+  outline: 0;
+  border: none;
+}
+.card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+}
