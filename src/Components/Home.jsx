@@ -59,7 +59,7 @@ const Home = () => {
                       dolorum nesciunt vero accusamus doloribus, in dolorem
                       voluptate.
                     </p>
-                    <a href="#" className="btn btn-primary">
+                    <a href="#" className="btn btn-outline-secondary">
                       Read More
                     </a>
                   </div>

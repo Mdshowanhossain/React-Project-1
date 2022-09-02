@@ -3,6 +3,7 @@
   --title: #263238;
   --text: #212121;
   --red: #f50057;
+  --gray: rgb(141, 137, 137);
 }
 
 body {
@@ -17,6 +18,16 @@ body {
 }
 .delete-icon {
   color: var(--red);
+}
+.card-title {
+  color: var(--title);
+}
+.card-text {
+  color: var(--text);
+}
+.small_data {
+  float: right;
+  color: var(--gray);
 }
 .search_section {
   width: 40rem;

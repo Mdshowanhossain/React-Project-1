@@ -11,7 +11,6 @@ const Pagination = () => {
                 Previous
               </a>
             </li>
-
             <li className="page-item">
               <a className="page-link" href="#">
                 1
@@ -34,6 +33,9 @@ const Pagination = () => {
             </li>
           </ul>
         </nav>
+        <div className="small_data">
+          <small> 1 of 50 page</small>
+        </div>
       </section>
     </>
   );
