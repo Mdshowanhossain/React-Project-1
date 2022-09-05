@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./App.css";
 import Home from "./Components/Home";
 import Pagination from "./Components/Pagination";

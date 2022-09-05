@@ -18,6 +18,7 @@ body {
 }
 .delete-icon {
   color: var(--red);
+  cursor: pointer;
 }
 .card-title {
   color: var(--title);
@@ -36,6 +37,10 @@ body {
 input {
   outline: 0;
   border: none;
+}
+.notallow {
+  cursor: not-allowed;
+  /* background-color: rgb(229, 229, 229) !important; */
 }
 .card-wrapper {
   display: grid;
