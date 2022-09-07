@@ -1,59 +1,10 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable react/jsx-no-comment-textnodes */
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { UilTrashAlt } from "@iconscout/react-unicons";
 import { useGlobalContext } from "./Context/context";
-import { UilFrown } from "@iconscout/react-unicons";
 const Home = () => {
-  // const API = "https://hn.algolia.com/api/v1/search_by_date?query=html";
-
-  // const dummyData = [
-  //   {
-  //     title: "Title 1",
-  //     description: "Description 1",
-  //   },
-  //   {
-  //     title: "Title 2",
-  //     description: "Description 1",
-  //   },
-  //   {
-  //     title: "Title 3",
-  //     description: "Description 1",
-  //   },
-  //   {
-  //     title: "Title 4",
-  //     description: "Description 1",
-  //   },
-  //   {
-  //     title: "Title 5",
-  //     description: "Description 1",
-  //   },
-  //   {
-  //     title: "Title 6",
-  //     description: "Description 1",
-  //   },
-  // ];
-  // const [loading, setLoading] = useState(true);
-
-  // const fetchData = async (url) => {
-  //   try {
-  //     const res = await fetch(url);
-  //     const data = await res.json();
-  //     setLoading(false);
-  //     console.log(data);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchData(API);
-  // }, []);
-
-  // const { loading, data } = useGlobalContext();
-
-  const { hits, nbPages, isLoading, removePost } = useGlobalContext();
-  console.log(nbPages);
+  const { hits, isLoading, removePost } = useGlobalContext();
 
   return (
     <>
@@ -70,17 +21,10 @@ const Home = () => {
                 Loading...
               </button>
             ) : (
-              // hits.length === 0 ? (
-              //   <div className="div">
-              //     <UilFrown size="140" />
-              //     <h2>no post</h2>
-              //   </div>
-
               hits.map((post) => {
                 const {
                   title,
                   author,
-                  comment_text,
                   objectID,
                   url,
                   num_comments,

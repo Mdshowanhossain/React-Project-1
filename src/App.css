@@ -12,10 +12,6 @@ body {
   box-sizing: border-box;
   background-color: var(--bg);
 }
-.container {
-  /* padding: 0 10rem;
-  border: 1px solid red; */
-}
 .delete-icon {
   color: var(--red);
   cursor: pointer;
@@ -40,7 +36,6 @@ input {
 }
 .notallow {
   cursor: not-allowed;
-  /* background-color: rgb(229, 229, 229) !important; */
 }
 .card-wrapper {
   display: grid;

@@ -4,9 +4,7 @@ import { useGlobalContext } from "./Context/context";
 
 const Pagination = () => {
   const { nextPage, previousPage, page, nbPages } = useGlobalContext();
-  // const nextPage = () => {
-  //   alert("kdfdf");
-  // };
+
   return (
     <>
       <section className="pagination-section my-5">
