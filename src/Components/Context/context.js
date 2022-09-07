@@ -7,7 +7,7 @@ const API = "https://hn.algolia.com/api/v1/search_by_date?";
 
 const initialState = {
   isLoading: true,
-  query: "HTML",
+  query: "",
   nbPages: 0,
   page: 0,
   hits: [],
@@ -45,12 +45,36 @@ const AppProvider = ({ children }) => {
     });
   };
 
+  // SEARCH POST
+
+  const searchPost = (search) => {
+    dispatch({
+      type: "SEARCH_QUERY",
+      payload: search,
+    });
+  };
+
+  // PAGINATION
+
+  const nextPage = () => {
+    dispatch({
+      type: "NEXT_PAGE",
+    });
+  };
+  const previousPage = () => {
+    dispatch({
+      type: "PREV_PAGE",
+    });
+  };
+
   useEffect(() => {
     fetchData(`${API}query=${state.query}&page=${state.page}`);
-  }, []);
+  }, [state.query, state.page]);
 
   return (
-    <AppContext.Provider value={{ ...state, removePost }}>
+    <AppContext.Provider
+      value={{ ...state, removePost, searchPost, nextPage, previousPage }}
+    >
       {" "}
       {children}{" "}
     </AppContext.Provider>

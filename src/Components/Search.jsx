@@ -1,6 +1,7 @@
 import React from "react";
-import { UilSearch } from "@iconscout/react-unicons";
+import { useGlobalContext } from "./Context/context";
 const Search = () => {
+  const { query, searchPost } = useGlobalContext();
   return (
     <>
       <>
@@ -13,6 +14,8 @@ const Search = () => {
             list="datalistOptions"
             id="exampleDataList"
             placeholder="search..."
+            value={query}
+            onChange={(e) => searchPost(e.target.value)}
           />
         </section>
       </>

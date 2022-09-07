@@ -1,12 +1,18 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { useGlobalContext } from "./Context/context";
 
 const Pagination = () => {
+  const { nextPage, previousPage, page, nbPages } = useGlobalContext();
+  // const nextPage = () => {
+  //   alert("kdfdf");
+  // };
   return (
     <>
       <section className="pagination-section my-5">
         <nav aria-label="Page navigation example">
           <ul className="pagination justify-content-end">
-            <li className="page-item">
+            <li className="page-item" onClick={() => previousPage()}>
               <a className="page-link" href="#">
                 Previous
               </a>
@@ -26,7 +32,7 @@ const Pagination = () => {
                 3
               </a>
             </li>
-            <li className="page-item">
+            <li className="page-item" onClick={() => nextPage()}>
               <a className="page-link" href="#">
                 Next
               </a>
@@ -34,7 +40,10 @@ const Pagination = () => {
           </ul>
         </nav>
         <div className="small_data">
-          <small> 1 of 50 page</small>
+          <small>
+            {" "}
+            {page + 1} of {nbPages} page
+          </small>
         </div>
       </section>
     </>

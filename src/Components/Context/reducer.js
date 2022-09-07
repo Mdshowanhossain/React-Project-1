@@ -13,11 +13,36 @@ const reducer = (state, action) => {
         ...state,
         hits: state.hits.filter(
           (curElement) => curElement.objectID !== action.payload
-          // console.log(action.payload)
         ),
       };
+    case "SEARCH_QUERY":
+      return {
+        ...state,
+        query: action.payload,
+      };
+
+    case "NEXT_PAGE":
+      let nPageNum = state.page + 1;
+      if (nPageNum >= state.nbPages) {
+        nPageNum = 0;
+      }
+
+      return {
+        ...state,
+        page: state.page + 1,
+      };
+    case "PREV_PAGE":
+      let pageNum = state.page - 1;
+
+      if (pageNum <= 0) {
+        pageNum = 0;
+      }
+
+      return {
+        ...state,
+        page: pageNum,
+      };
   }
-  // curElement.objectID !== action.payload
   return state;
 };
 export default reducer;

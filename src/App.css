@@ -47,3 +47,16 @@ input {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 3rem;
 }
+.div {
+  text-align: center;
+  font-size: 3rem;
+}
+.div .sad-icon {
+  color: var(--red);
+  width: 6rem;
+}
+.div h2 {
+  margin-top: 3rem;
+  font-size: 3rem;
+  color: var(--red);
+}

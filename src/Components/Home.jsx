@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { UilTrashAlt } from "@iconscout/react-unicons";
 import { useGlobalContext } from "./Context/context";
-
+import { UilFrown } from "@iconscout/react-unicons";
 const Home = () => {
   // const API = "https://hn.algolia.com/api/v1/search_by_date?query=html";
 
@@ -53,7 +53,7 @@ const Home = () => {
   // const { loading, data } = useGlobalContext();
 
   const { hits, nbPages, isLoading, removePost } = useGlobalContext();
-  // console.log(hits);
+  console.log(nbPages);
 
   return (
     <>
@@ -70,6 +70,12 @@ const Home = () => {
                 Loading...
               </button>
             ) : (
+              // hits.length === 0 ? (
+              //   <div className="div">
+              //     <UilFrown size="140" />
+              //     <h2>no post</h2>
+              //   </div>
+
               hits.map((post) => {
                 const {
                   title,
@@ -89,23 +95,16 @@ const Home = () => {
                       <div className="card-header">
                         <ul className="nav nav-tabs card-header-tabs">
                           <li className="nav-item">
-                            {/* <a
-                              className="nav-link active "
-                              aria-current="true"
-                              href="#"
-                            > */}
                             <span className="nav-link active ">
                               <UilTrashAlt
                                 className="delete-icon"
                                 onClick={() => removePost(objectID)}
                               />
                             </span>
-                            {/* </a> */}
                           </li>
                         </ul>
                       </div>
                       <div className="card-body">
-                        {/* <small className="text-center">{title}</small> */}
                         <h5 className="card-title text-center">
                           {story_title ? story_title : title}
                         </h5>
@@ -114,17 +113,13 @@ const Home = () => {
                           <span className="text-primary"> {author}</span> ||
                           Comments{" "}
                           <span className="text-success">
-                            {/* {num_comments
+                            {num_comments
                               ? num_comments
                               : Math.floor(
                                   Math.random() * (500 + 600).toFixed(3)
-                                )} */}
+                                )}
                           </span>
                         </p>
-                        {/* <p className="card-text">
-                          
-                        </p> */}
-                        {/* // eslint-disable-next-line react/jsx-no-target-blank */}
                         <a
                           href={url}
                           target="_blank"
